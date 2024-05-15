@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <title>GunStore</title>
+        <link rel="stylesheet" href="Style.css"/>
+        <style>
+      #cart {
+   
+    top: 20px; /* Adjust as needed */
+    right: 20px;
+    background: linear-gradient(to bottom, #e9e9e9, #333); /* Gradient background */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px;
+    width: 500px;
+    z-index: 1000;
+}
+
+#cart h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #333;
+    text-align: center;
+}
+
+#cart-items {
+    list-style-type: none;
+    padding: 0;
+}
+
+#cart-items li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fff; /* White background for each item */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: block; /* Change display to block */
+}
+
+
+#cart-items li:last-child {
+    margin-bottom: 0;
+}
+
+#cart-total {
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: right;
+    color: #fff;
+}
+
+#clear-cart-btn,
+#checkout-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+#clear-cart-btn:hover,
+#checkout-btn:hover {
+    background-color: #2980b9;
+}
+
+.products{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  }
+
+.products .card{
+  width: 300px;
+  background: #c4c1e0;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 20px;
+  margin-block-start: 30px;
+  margin-inline-start: 35px;
+  margin-block-end: 30px;
+}
+
+.products .card img{
+  height: 250px;
+  width: 100%;
+}
+
+
+
+.products .card .title{
+  font-weight: 900;
+  font-size: 20px;
+  color: #000000;
+  padding: 0 20px;
+}
+
+.products .card .box{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.products .card .box .price{
+  color: #d62007;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.products .card .box .btn{
+  font-size: 10px;
+  color: #000000;
+  padding: 10px 15px;
+  font-weight: 900;
+  border: 1px solid #000000;
+  border-radius: 10px;
+}
+
+.products .card .box .btn:hover{
+  cursor: pointer;
+  color: #ffffff;
+  background-color: #7c73e6;
+  counter-reset: white;
+}
+
+  
+.tagname{
+  text-align: center;
+  color: #7c73e6;
+}
+
+
+
+section {
+  position: relative;
+  z-index: 3;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+
+        </style>
+    </head>
+
+    <body>
+       <header>
+            <div>
+                
+                
+               
+                </script>
+            <nav>
+                
+                <ul>
+                    <li style="float: left;"><a href= "Home.html">Home</a></li>
+                    <li style="float: left;"><a href= "contact.html">Contact</a></li>
+                    <li style="float: left;"><a  class="active" href= "Pistols.html">Products</a></li>
+                    <li style="float: left;"><a href= "Checkout.html">Checkout</a></li>
+                
+                </ul>
+            </nav>
+        
+       </header>
+       <h1 class="category">Products</h1>    
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br> <br>
+       <br>
+       <br>
+       
+       <div id="cart">
+        <h3>Shopping Cart</h3>
+        <ul id="cart-items">
+        </ul>
+        <p>Total: ₱<span id="cart-total">0</span></p>
+        <button id="clear-cart-btn">Clear Cart</button>
+        <button id="checkout-btn">Checkout</button>
+    </div>
+    
+      
+       <section class="sec">
+        <div class="products">
+
+            
+            
+
+            <div class="card">
+                <div class="img"><img src="PISTOLS/G17-4.png" alt=""></div>
+                <div class="title">GLOCK17-4Gen<br><br></div>
+                <div class="box">
+                    <div class="price">PHP20,567</div>
+                    <button class="btn" onclick="addToCart('GLOCK17-4Gen', 20567)">Add to Cart</button>
+                    
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img"><img src="PISTOLS/G17-5.png" alt=""></div>
+                <div class="title">GLOCK17-5Gen<br><br></div>
+                <div class="box">
+                    <div class="price">PHP21,499</div>
+                    <button class="btn" onclick="addToCart('GLOCK17-5Gen', 21499)">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img"><img src="PISTOLS/G17L.png" alt=""></div>
+                <div class="title">GLOCK17L<br><br></div>
+                <div class="box">
+                    <div class="price">PHP27,299</div>
+                    <button class="btn" onclick="addToCart('GLOCK17L',27299 )">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img"><img src="PISTOLS/G19.png" alt=""></div>
+                <div class="title">GLOCK19<br><br></div>
+                <div class="box">
+                    <div class="price">PHP25,899</div>
+                    <button class="btn" onclick="addToCart('GLOCK19',25899 )">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img"><img src="PISTOLS/G26.png" alt=""></div>
+                <div class="title">GLOCK26<br><br></div>
+                <div class="box">
+                    <div class="price">PHP23,699</div>
+                    <button class="btn" onclick="addToCart('GLOCK26', 23699)">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img"><img src="PISTOLS/g17p.png" alt=""></div>
+                <div class="title">GLOCK19P<br><br></div>
+                <div class="box">
+                    <div class="price">PHP24,899</div>
+                    <button class="btn" onclick="addToCart('GLOCK19P',24899 )">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img"><img src="PISTOLS/g19x.png" alt=""></div>
+                <div class="title">GLOCK19X<br><br></div>
+                <div class="box">
+                    <div class="price">PHP25,699</div>
+                    <button class="btn" onclick="addToCart('GLOCK19X',25699 )">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img"><img src="PISTOLS/g17c.png" alt=""></div>
+                <div class="title">GLOCK17-cut<br><br></div>
+                <div class="box">
+                    <div class="price">PHP26,799</div>
+                    <button class="btn" onclick="addToCart('GLOCK17-cut',26799 )">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img"><img src="PISTOLS/g19c.png" alt=""></div>
+                <div class="title">GLOCK19-cut<br><br></div>
+                <div class="box">
+                    <div class="price">PHP27,999</div>
+                    <button class="btn" onclick="addToCart('GLOCK19-cut',27999 )">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img"><img src="PISTOLS/g26c.png" alt=""></div>
+                <div class="title">GLOCK19-cut<br><br></div>
+                <div class="box">
+                    <div class="price">PHP29,599</div>
+                    <button class="btn" onclick="addToCart('GLOCK19-cut',29599 )">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img"><img src="PISTOLS/G22P.png" alt=""></div>
+                <div class="title">GLOCK22P<br><br></div>
+                <div class="box">
+                    <div class="price">PHP30,299</div>
+                    <button class="btn" onclick="addToCart('GLOCK22P',30299 )">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img"><img src="PISTOLS/G23P.png" alt=""></div>
+                <div class="title">GLOCK23P<br><br></div>
+                <div class="box">
+                    <div class="price">PHP31,799</div>
+                    <button class="btn" onclick="addToCart('GLOCK23P',31799 )">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img"><img src="PISTOLS/G17T.png" alt=""></div>
+                <div class="title">GLOCK17T<br><br></div>
+                <div class="box">
+                    <div class="price">PHP37,929</div>
+                    <button class="btn" onclick="addToCart('GLOCK17T',37929 )">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img"><img src="PISTOLS/G19T.png" alt=""></div>
+                <div class="title">GLOCK19T<br><br></div>
+                <div class="box">
+                    <div class="price">PHP34,739</div>
+                    <button class="btn" onclick="addToCart('GLOCK19T',34739 )">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img"><img src="PISTOLS/G45T.png" alt=""></div>
+                <div class="title">GLOCK45T<br><br></div>
+                <div class="box">
+                    <div class="price">PHP35,476</div>
+                    <button class="btn" onclick="addToCart('GLOCK45T',35476 )">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script >let cartItems = [];
+        let totalPrice = 0;
+        
+        function addToCart(productName, productPrice) {
+            cartItems.push({ name: productName, price: productPrice });
+            totalPrice += productPrice;
+        
+            displayCart();
+        }
+        
+        function displayCart() {
+            const cartList = document.getElementById('cart-items');
+            const totalDisplay = document.getElementById('cart-total');
+        
+            // Clear previous items
+            cartList.innerHTML = '';
+        
+            // Add new items
+            cartItems.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = `${item.name} - ₱${item.price.toFixed(2)}`;
+                cartList.appendChild(li);
+            });
+        
+            // Update total price
+            totalDisplay.textContent = totalPrice.toFixed(2);
+        }
+        
+        // Function to clear the cart
+        function clearCart() {
+            // Clear the items from the cart
+            cartItems = [];
+            totalPrice = 0;
+            displayCart();
+        }
+        
+        // Add event listener to the Clear Cart button
+        document.getElementById("clear-cart-btn").addEventListener("click", clearCart);
+        
+        // Function to handle checkout
+        function handleCheckout() {
+            // Navigate to the checkout page with cart items and total as query parameters
+            const cartItemsQuery = encodeURIComponent(JSON.stringify(cartItems));
+            const totalPriceQuery = encodeURIComponent(totalPrice.toFixed(2));
+            window.location.href = `checkout.html?items=${cartItemsQuery}&total=${totalPriceQuery}`;
+        }
+        
+        // Add event listener to the Checkout button
+        document.getElementById("checkout-btn").addEventListener("click", handleCheckout);
+        
+        // Initial display of the cart
+        displayCart();
+
+        </script>
+    </body>
+
+</html>
